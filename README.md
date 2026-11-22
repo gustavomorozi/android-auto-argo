@@ -14,6 +14,7 @@ central e sem comprar adaptador. É só instalar um app na central e ligar o cel
 - ✅ **Funciona com o carro andando** (não depende do freio de mão)
 - ✅ **Botões do volante** (próxima, anterior, avançar e voltar)
 - ✅ **Imagem em 720p** ajustada para a tela de 1024x600
+- ✅ **Funciona com Carbox** (AI Box / caixinha Android) que usa o **protocolo Android Auto**, ligada no USB
 
 > 💚 **Gostou?** É grátis. Se quiser apoiar, tem [QR code do Pix](#10-apoie-este-projeto) no fim da página.
 
@@ -63,6 +64,17 @@ A tela inicial dela é assim:
 O app transforma a central no "carro" do Android Auto. O celular manda a tela do Android Auto (Maps, Waze,
 Spotify, WhatsApp...) pelo cabo USB e o app mostra na tela da central. **Não precisa** de adaptador
 CarlinKit.
+
+### Funciona com Carbox (AI Box)
+
+Também funciona com **Carbox** (as "AI Box", caixinhas com Android próprio que ligam no USB do carro)
+**que usam o protocolo Android Auto**. Para a central, a Carbox é igual a um celular: ela abre o Android
+Auto pelo cabo e o app mostra a tela dela, com toque, áudio e botões do volante.
+
+- Testado com a **CarlinKit TBox Lite S** (vídeo, toque, áudio, botões do volante e apps como o SmartTube).
+- A Carbox precisa estar no **modo Android Auto**. Caixas que só falam **CarPlay** (ou o protocolo próprio
+  do app AutoKit) não funcionam com este app.
+- Ligue a Carbox no USB da central no lugar do celular; o resto é igual à [primeira conexão](#5-primeira-conexão-do-celular).
 
 ---
 
