@@ -12,8 +12,8 @@ central e sem comprar adaptador. É só instalar um app na central e ligar o cel
 - ✅ **Roda no Android 4.2.2** da central (o app funciona a partir do Android 4.1)
 - ✅ **Instala como app normal**: não mexe no sistema da central
 - ✅ **Funciona com o carro andando** (não depende do freio de mão)
-- ✅ **Botões do volante** (próxima, anterior, avançar e voltar)
-- ✅ **Imagem em 720p** ajustada para a tela de 1024x600
+- ✅ **Todos os botões do volante funcionam** (música, pausar, assistente de voz, telefone): [veja cada um](#6-botões-do-volante)
+- ✅ **Imagem fluida** (vídeo a até 25 quadros por segundo) e **toque rápido** na tela de 1024x600
 - ✅ **Funciona com Carbox** (AI Box / caixinha Android) que usa o **protocolo Android Auto**, ligada no USB
 
 > 💚 **Gostou?** É grátis. Se quiser apoiar, tem [QR code do Pix](#10-apoie-este-projeto) no fim da página.
@@ -125,12 +125,27 @@ deles quando o **freio de mão** não está puxado. Os nomes Deezer e TuneIn est
 
 ## 6. Botões do volante
 
-| Botão | O que faz no Android Auto |
+**Os botões do volante funcionam com o Android Auto.** O app lê os botões direto da central (ela não manda
+esses botões como teclas comuns do Android) e envia para o celular:
+
+| Botão no volante | O que faz no Android Auto |
 |---|---|
-| Próxima / Anterior | Próxima / anterior música |
-| Segurar Próxima / Anterior | Avançar / voltar na música |
-| Volume + / − | Volume da central (normal) |
-| Voz, telefone, mudo | Chegam como teclas normais do Android; ajuste em **Configurações > Teclas** do app se precisar |
+| ⏭️ **Próxima** | Próxima música |
+| ⏮️ **Anterior** | Música anterior |
+| ⏭️ **Segurar Próxima** | Avança um pouco na música |
+| ⏮️ **Segurar Anterior** | Volta um pouco na música |
+| ⏯️ **Pausar** | Pausa / continua a música (na hora, sem atraso) |
+| ⏯️ **Pausar 2x rápido** | Abre o **Assistente do Google** ("Ok Google") |
+| 🎙️ **Voz** | Abre o **Assistente do Google** (o assistente de voz da central é fechado sozinho) |
+| 📞 **Telefone (verde)** | Botão de ligação do Android Auto (atender / abrir as ligações); a tela volta sozinha para o Android Auto |
+| 🔊 **Volume + / −** | Volume da central, como sempre |
+| 🔇 **Mudo** | Mudo da central, como sempre |
+
+Todos aparecem em **Configurações > Teclas** do app com o nome do botão ("Volante: Pausar", "Volante: Voz"...),
+e você pode trocar o que cada um faz.
+
+> O volante desta central não informa quanto tempo o botão ficou apertado, por isso o atalho do assistente
+> é **apertar o Pausar duas vezes rápido** (ou usar o botão de Voz).
 
 ---
 
