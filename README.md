@@ -5,8 +5,9 @@
 **Use o Android Auto do seu celular na central de fábrica do Fiat Argo** (Multilaser/Mopar 9"), sem trocar a
 central e sem comprar adaptador. É só instalar um app na central e ligar o celular no cabo USB.
 
-> ⚠️ **Versão beta.** Os APKs foram montados e conferidos, mas o teste completo no carro ainda está em
-> andamento. Use por sua conta e risco e conte nos [Issues](../../issues) como foi no seu carro.
+> ⚠️ **Versão beta.** Testada no carro com celular (Galaxy S25 Ultra) e com Carbox CarlinKit pelo cabo USB:
+> vídeo, toque, áudio e botões do volante. Use por sua conta e risco e conte nos [Issues](../../issues) como
+> foi no seu carro.
 
 - ✅ **Grátis e de código aberto** (baseado no [Open Headunit](https://github.com/andreknieriem/open-headunit), GPLv3)
 - ✅ **Roda no Android 4.2.2** da central (o app funciona a partir do Android 4.1)
@@ -80,17 +81,15 @@ Auto pelo cabo e o app mostra a tela dela, com toque, áudio e botões do volant
 
 ## 3. Qual APK baixar
 
-Baixe na página de [**Releases**](../../releases/latest). São duas versões do **mesmo app**, só com nomes
-diferentes por dentro:
+Baixe na página de [**Releases**](../../releases/latest) o arquivo **`AndroidAuto-Argo.apk`**.
 
-| Arquivo | Use quando |
-|---|---|
-| **`AndroidAuto-Argo-Deezer.apk`** | **Recomendado.** |
-| `AndroidAuto-Argo-TuneIn.apk` | Se a versão Deezer não instalar (por exemplo, se você já tem o app Deezer ou outro "Android Auto Trial" instalado). |
+Por dentro ele usa o nome de pacote do Spotify (`com.spotify.music`). A central **só deixa instalar** apps de
+uma lista fixa do fabricante, **bloqueia alguns** quando o **freio de mão** não está puxado e **troca o nome**
+de outros no menu. O do Spotify é o único que passa nas três: instala, funciona com o carro andando e aparece
+no menu como **"Android Auto"**. Detalhes na [seção 8](#8-por-que-funciona-detalhes-técnicos).
 
-Por que dois nomes? A central **só deixa instalar** apps de uma lista fixa do fabricante, e bloqueia alguns
-deles quando o **freio de mão** não está puxado. Os nomes Deezer e TuneIn estão na lista de instalação e
-**fora** da lista do freio de mão. Detalhes na [seção 8](#8-por-que-funciona-detalhes-técnicos).
+> ⚠️ Se você tem o **AutoKit** (ou outro app pago) instalado **com o nome Spotify**, desinstale antes. Se ele
+> estiver instalado com outro nome (Deezer, por exemplo), pode deixar.
 
 ---
 
@@ -98,13 +97,13 @@ deles quando o **freio de mão** não está puxado. Os nomes Deezer e TuneIn est
 
 **Precisa de:** um pendrive (FAT32) e o APK baixado.
 
-1. Copie o **`AndroidAuto-Argo-Deezer.apk`** para o pendrive.
+1. Copie o **`AndroidAuto-Argo.apk`** para o pendrive.
 2. Espete o pendrive na **USB da central**.
 3. Na central, abra **Apps > Gerenciador de arquivos** e entre no pendrive.
-4. Toque no **`AndroidAuto-Argo-Deezer.apk`** e em **Instalar**.
-   - Se aparecer "O aplicativo não foi instalado": desinstale antes qualquer outro app com o mesmo nome
-     (Deezer ou "Android Auto Trial") ou use a versão **TuneIn**.
-5. Pronto: o app aparece em **Apps** com o nome **Open Headunit**.
+4. Toque no **`AndroidAuto-Argo.apk`** e em **Instalar**.
+   - Se aparecer "O aplicativo não foi instalado": desinstale antes o app que já usa o nome Spotify
+     (por exemplo, o AutoKit) e as versões antigas deste app (as que apareciam como **TuneIn Radio** ou **Deezer**).
+5. Pronto: o app aparece em **Apps** com o nome **Android Auto**.
 
 > 💡 Não precisa de root, nem mexer no sistema, nem de cartão de memória. Para desinstalar, é como qualquer app.
 
@@ -114,12 +113,18 @@ deles quando o **freio de mão** não está puxado. Os nomes Deezer e TuneIn est
 
 1. No celular, instale/atualize o **Android Auto** (Play Store). Em celulares novos ele já vem no sistema.
 2. Tire o pendrive e ligue o **celular no cabo USB** da central (cabo **de dados**, não só de carga).
-3. A central abre o app sozinha (ou abra **Open Headunit**). Na primeira vez:
+3. A central abre o app sozinha (ou abra **Android Auto** em Apps). Na primeira vez:
    - o celular pede para **permitir o Android Auto**: aceite tudo;
    - o app da central pode pedir **permissão de USB**: marque "usar por padrão" e aceite.
 4. A tela do Android Auto aparece na central. 🎉
 
-**Configuração recomendada** (já vem assim nesta versão): resolução **720p**, codec **H.264**, **30 FPS**.
+**Configuração** (já vem pronta nesta versão, não precisa mexer): resolução **480p**, codec **H.264**, **30 FPS**,
+vídeo em **SurfaceView** (o mesmo jeito do AutoKit: a imagem vai direto para a tela, liso e sem atraso).
+
+> 📶 **Sem fio (Wi-Fi):** o Android Auto **sem fio nativo não funciona nesta central**. O Bluetooth dela é um
+> módulo do fabricante que não deixa apps criarem o serviço que o Android Auto sem fio precisa. Para usar sem
+> fio, ligue no USB um **adaptador Android Auto sem fio** ou uma **Carbox** no modo Android Auto: para a
+> central eles são iguais a um celular no cabo.
 
 ---
 
@@ -153,10 +158,11 @@ e você pode trocar o que cada um faz.
 
 | Problema | O que fazer |
 |---|---|
-| "O aplicativo não foi instalado" | Desinstale Deezer / "Android Auto Trial" ou use a versão TuneIn. |
-| Só funciona com freio de mão puxado | Você instalou uma versão com nome bloqueado (por exemplo, AroundMe). Use a **Deezer** ou **TuneIn**. |
-| Celular conecta mas fica tela preta | Troque o cabo (tem que ser de dados) e confira se a resolução está em 720p e o codec em H.264. |
-| Imagem travando | Em Configurações do app, deixe **30 FPS** e **720p**; feche outros apps da central. |
+| "O aplicativo não foi instalado" | Desinstale o app que já usa o nome Spotify (ex.: AutoKit) e as versões antigas deste app. |
+| Só funciona com freio de mão puxado | Você instalou uma versão antiga com nome bloqueado (por exemplo, AroundMe). Use o `AndroidAuto-Argo.apk`. |
+| Aparece "TuneIn Radio" ou "Clima Tempo" no menu | É uma versão antiga. Desinstale e instale o `AndroidAuto-Argo.apk` (aparece como "Android Auto"). |
+| Celular conecta mas fica tela preta | Troque o cabo (tem que ser de dados). Em Configurações do app, use **Restaurar padrões**. |
+| Imagem travando ou toque lento | Em Configurações do app, use **Restaurar padrões** (vídeo SurfaceView, 480p, 30 FPS); feche outros apps da central. |
 | Quero mandar um log | No app: **Configurações > Exportar logs**, copie para o pendrive e anexe num [Issue](../../issues). |
 
 Se a sua central travar no robô do "Android system recovery", veja o guia de recuperação:
@@ -171,15 +177,21 @@ Descoberto analisando o sistema da própria central (Autochips AC8317, Roadrover
 - **Trava de instalação**: o `PackageManagerService` da central só instala pacotes de uma lista:
   Facebook, YouTube, Spotify, Deezer (`deezer.android.app`), TuneIn (`tunein.player`), iGO, AroundMe,
   Instagram, Clean Master, Clima Tempo. Por isso o app é compilado com o *package name* de um deles.
+- **Nome no menu**: o arquivo `/system/etc/IconConfig.ini` troca, em português, o nome de alguns desses
+  pacotes (`tunein.player` vira "TuneIn Radio", `com.mobimidia.climaTempo` vira "Clima Tempo"...). O
+  `com.spotify.music` não é trocado e mostra o nome do app: **Android Auto**.
 - **Freio de mão**: um arquivo de configuração do sistema lista os apps que só abrem com o freio puxado:
-  Facebook, YouTube, Instagram, **AroundMe**, Clean Master, Elink, navegador e fotos. Deezer e TuneIn
-  ficam de fora.
+  Facebook, YouTube, Instagram, **AroundMe**, Clean Master, Elink, navegador e fotos. Spotify fica de fora.
 - **Botões do volante**: o MCU manda as teclas para o serviço `com.roadrover.carinfo`, que **não** gera
   teclas de mídia do Android: ele envia o broadcast `com.roadrover.frontpane.keyevent.media` com
-  `action=next/prev/ff_start/...`. O app escuta esse broadcast (`CarRoadroverReceiver`) e repassa ao
-  celular.
-- **Vídeo**: a central tem decodificador H.264 por hardware (`OMX.mtk.video.decoder.avc`); o app usa ele
-  em 720p/30 FPS.
+  `action=next/prev/next_saved/ff_start/...` (o `next_saved` é o botão Pausar). O botão de voz chega como
+  `com.roadrover.frontpane.keyevent` com `keyvalue=106` e o de telefone como a tecla Android 239
+  (`KEYCODE_TEL`). O app escuta tudo isso (`CarRoadroverReceiver`) e repassa ao celular.
+- **Toque**: no Android 4.2, esconder a barra de navegação (que esta central nem tem) cria uma janela invisível
+  que engole o primeiro toque depois de cada pausa. O app não pede isso nesta central.
+- **Vídeo**: decodificador H.264 por hardware (`OMX.mtk.video.decoder.avc`) entregando direto num
+  `SurfaceView`, como o AutoKit faz. Medido: vídeo a 24-25 quadros por segundo, todos na tela, ~80 ms de
+  atraso, ~1% de CPU do app.
 
 Os apps que circulam pagos (o "Android Auto Trial" e o AutoKit) usam o mesmo truque de nome
 (Deezer e Spotify). Este é a versão **aberta e gratuita**.
@@ -190,7 +202,7 @@ Os apps que circulam pagos (o "Android Auto Trial" e o AutoKit) usam o mesmo tru
 
 - **Código-fonte deste app**: [gustavomorozi/android-auto-headunit](https://github.com/gustavomorozi/android-auto-headunit)
   (fork com o suporte à central Roadrover/Argo). Compilar:
-  `./gradlew assembleGithubDebug -PappIdOverride=deezer.android.app -PargoProfile=true`
+  `./gradlew assembleGithubDebug -PappIdOverride=com.spotify.music -PargoProfile=true`
 - **Open Headunit / Headunit Revived**, de André Rinas e colaboradores, a partir do *headunit* original de
   Michael Reid. Licença **GPLv3**.
 - Não oficial, sem vínculo com Fiat, Stellantis, Multilaser ou Google. "Android Auto" é marca do Google.
